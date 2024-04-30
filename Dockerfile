@@ -15,4 +15,4 @@ ENV PORT $PORT
 EXPOSE $PORT/tcp
 
 RUN echo "PORT: [$PORT]"
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "$PORT"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "$PORT"]
