@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-from libs.GeminiAI import response_generator
+from app.libs.GeminiAI import response_generator
 
 app = FastAPI()
 
