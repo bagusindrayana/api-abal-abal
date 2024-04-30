@@ -39,9 +39,9 @@ async def message(
     )
 
 
-default_port = "8111"
+default_port = "8080"
 try:
-    port = int(float(os.getenv("PORT", default_port)))
+    port = int(float(os.environ.get("PORT", default_port)))
 except TypeError:
     port = int(default_port)
 
