@@ -8,7 +8,9 @@ from libs.GeminiAI import response_generator
 
 app = FastAPI()
 
-origins = ["*"]
+origins = [
+    "abal-abal.vercel.app"
+    "localhost:5173",]
 
 app.add_middleware(
     CORSMiddleware,
