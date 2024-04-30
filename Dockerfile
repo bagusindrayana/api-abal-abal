@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r  requirements.txt
 
 ENV APP_HOME /root
 WORKDIR $APP_HOME
-COPY /app $APP_HOME
+COPY /app $APP_HOME/app
 
 ARG PORT
 ENV PORT $PORT
