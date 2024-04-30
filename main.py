@@ -1,6 +1,7 @@
 import uvicorn
 import os
-from app.main import app
+import app.main
+app = app.main.app
 
 default_port = "8080"
 try:
