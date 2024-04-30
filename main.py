@@ -8,9 +8,7 @@ from libs.GeminiAI import response_generator
 
 app = FastAPI()
 
-origins = [
-    "abal-abal.vercel.app"
-    "localhost:5173",]
+origins = ["https://abal-abal.vercel.app", "http://localhost", "http://localhost:5173"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -20,23 +18,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 class RequestMessage(BaseModel):
     message: str
     style: str
 
+
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
+
 
 @app.post("/request-message/")
 async def message(
     request: RequestMessage,
 ):
     return StreamingResponse(
-        response_generator(request.message,request.style),
-        
+        response_generator(request.message, request.style),
         media_type="application/x-ndjson",
     )
+
 
 default_port = "8111"
 try:
